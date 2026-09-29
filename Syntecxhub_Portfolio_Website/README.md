@@ -4,6 +4,7 @@ A responsive single-page portfolio website built with HTML and CSS only.
 Project 1 of the Syntecxhub Frontend Development Internship (Week 1).
 
 ## Features
+
 - Sections: About, Skills, Projects, Contact
 - Responsive design for mobile and desktop
 - Hover effects and transitions
@@ -14,11 +15,9 @@ Project 1 of the Syntecxhub Frontend Development Internship (Week 1).
 HTML5, CSS3 (Flexbox, Grid, media queries)
 
 ## Run Locally
-clone the repository using the following command:
-```bash
-git clone https://waleedkhanse10.github.io/Syntecxhub_Project/Syntecxhub_Portfolio_Website.git
-```
-
+clone the repository;
+open folder in your code editor;
+or
 Open `index.html` in your browser.
 
 ## Author
