@@ -4,7 +4,6 @@ A responsive single-page portfolio website built with HTML and CSS only.
 Project 1 of the Syntecxhub Frontend Development Internship (Week 1).
 
 ## Features
-
 - Sections: About, Skills, Projects, Contact
 - Responsive design for mobile and desktop
 - Hover effects and transitions
