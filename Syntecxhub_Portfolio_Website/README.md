@@ -15,10 +15,16 @@ Project 1 of the Syntecxhub Frontend Development Internship (Week 1).
 HTML5, CSS3 (Flexbox, Grid, media queries)
 
 ## Run Locally
-clone the repository;
-open folder in your code editor;
-or
-Open `index.html` in your browser.
+
+1. Clone the repository:
+```bash
+   git clone https://github.com/waleedkhanse10/Syntecxhub_Project.git
+```
+2. Go into the project folder:
+```bash
+   cd Syntecxhub_Project/Syntecxhub_Portfolio_Website
+```
+3. Open `index.html` in your browser (or use Live Server in VS Code).
 
 ## Author
 
