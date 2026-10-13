@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.3s ease visibility 0.3s ease;
+}
+
+.overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-box {
+    background: white;
+    padding: 32px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    transform: scale(0.9);
+}
+
+.overlay.overlay.active .model-box {
+    transform: scale(1);
+}

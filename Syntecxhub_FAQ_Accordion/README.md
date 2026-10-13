@@ -44,4 +44,4 @@ No installation or build step required.
 JavaScript attaches a click listener to each `.faq-question` button. Clicking it toggles an `active` class on the parent `.faq-item`, and CSS handles the animation (answer height, icon rotation, and colors).
 
 ## Author
-**Waleed Khan**
+**Waleed Khan** 
