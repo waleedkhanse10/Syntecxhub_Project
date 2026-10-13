@@ -19,6 +19,7 @@ function addToTask(title) {
     const newTask = {
         id: crypto.randomUUID(),
         title: title,
+        completed: false,
     }
 
     Tasks.push(newTask)
@@ -27,27 +28,39 @@ function addToTask(title) {
 
 function createTask(task) {
     const li = document.createElement('li')
+    li.setAttribute('data-id', task.id)
     const title = document.createElement('p')
     const deleteButton = document.createElement("button")
     const completeButton = document.createElement("button")
     const div = document.createElement("div")
 
-    deleteButton.textContent = "Delete"
-    completeButton.textContent = "Complete"
+    deleteButton.innerHTML = '<i class="fa-solid fa-trash-can"></i>'
+    completeButton.innerHTML = '<i class="fa-solid fa-check"></i>'
+
     title.textContent = task.title
+    title.classList.toggle('completed', task.completed)
 
     div.append(deleteButton, completeButton)
 
     li.append(title, div)
-    
+
+    li.classList.add('entering')
     tasksList.appendChild(li);
+
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            li.classList.add('enter-active')
+        })
+    })
 
     deleteButton.addEventListener('click', () => {
         deleteTask(task);
     })
-    
+
     completeButton.addEventListener("click", () => {
-        title.classList.toggle('completed')
+        task.completed = !task.completed
+        title.classList.toggle('completed', task.completed)
+        setTask();
     })
 }
 
@@ -66,21 +79,43 @@ function showTasks() {
 }
 
 function deleteTask(task) {
-    const index = Tasks.findIndex((t) => t.id === task.id)
-    Tasks.splice(index,1)
+    const li = tasksList.querySelector(`[data-id="${task.id}"]`)
+    if (li) {
+        li.classList.remove('entering', 'enter-active')
+        li.classList.add('removing')
+        setTimeout(() => {
+            const index = Tasks.findIndex((t) => t.id === task.id)
+            Tasks.splice(index, 1)
 
-    setTask();
-    showTasks()
+            setTask();
+            showTasks()
+        }, 300)
+    } else {
+        const index = Tasks.findIndex((t) => t.id === task.id)
+        Tasks.splice(index, 1)
+        setTask();
+        showTasks()
+    }
 }
 
-submitButton.addEventListener('click', () => {
-    title = inputTask.value
+function addTask() {
+    const title = inputTask.value
 
     if (title.trim() === "") return;
     addToTask(title)
 
     inputTask.value = ""
     showTasks();
+}
+
+submitButton.addEventListener('click', () => {
+    addTask()
+})
+
+inputTask.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        addTask()
+    }
 })
 
 getTasks();
