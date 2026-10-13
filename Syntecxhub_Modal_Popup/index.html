@@ -4,19 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modal_Popup</title>
+    <title>Modal Popup</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <main>
+    <main class="hero">
+        <h1>Modal / Popup Window</h1>
+        <p>A smooth, responsive modal built with HTML, CSS and JavaScript.</p>
         <button class="open-btn">Open Modal</button>
 
         <div class="overlay">
-            <div class="modal-box">
-                <button class="close-btn">close</button>
-                <h2>welcome</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+                <button class="close-btn" aria-label="Close modal">&times;</button>
+                <div class="modal-icon">🎉</div>
+                <h2 id="modal-title">Welcome aboard!</h2>
+                <p>Thanks for stopping by. This modal opens with a smooth animation and closes with the
+                    close button or by clicking outside the box.</p>
             </div>
         </div>
     </main>
