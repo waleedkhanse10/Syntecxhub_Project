@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple and elegant quiz application.">
+    <title>Quiz Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="quiz-card">
+        <section id="quiz-screen">
+            <header class="quiz-header">
+                <span class="badge">General Knowledge</span>
+                <span id="question-counter">1 / 10</span>
+            </header>
+
+            <div class="progress-track" aria-hidden="true">
+                <div id="progress-bar"></div>
+            </div>
+            <p id="progress-text">0% completed</p>
+
+            <h2 id="question"></h2>
+
+            <div id="options"></div>
+
+            <button id="next" disabled>Next</button>
+        </section>
+
+        <section id="result-screen" class="hidden">
+            <div id="score-circle">
+                <div class="score-inner">
+                    <span id="score-value">0</span>
+                    <small>out of 10</small>
+                </div>
+            </div>
+
+            <h2 id="result-message"></h2>
+            <p id="result-detail"></p>
+
+            <button id="restart">Restart Quiz</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
