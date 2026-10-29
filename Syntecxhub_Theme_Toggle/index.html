@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SyntecxHub — Theme Toggle Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="brand">SyntecxHub</a>
+
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+        <span class="knob">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41
+                     M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>Dark / Light Mode Toggle</h1>
+
+    <p class="lead">
+      Flip the switch in the navbar to change the theme. Your choice is saved in
+      <code>localStorage</code>, and if nothing is saved the page follows your
+      system preference. Colors come entirely from CSS variables — no hardcoded
+      colors in JavaScript.
+    </p>
+
+    <article class="card">
+      <h2>Why CSS variables?</h2>
+      <p>
+        Every color on this page lives in a CSS custom property. Switching themes
+        just swaps the value of <code>data-theme</code> on the
+        <code>&lt;html&gt;</code> element, and the browser re-resolves every
+        variable instantly — with a smooth 0.3s transition on background, text
+        and borders.
+      </p>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
